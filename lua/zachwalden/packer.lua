@@ -14,14 +14,6 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
-
-  use({
       "folke/trouble.nvim",
       config = function()
           require("trouble").setup {
@@ -70,5 +62,13 @@ return require('packer').startup(function(use)
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
 
-end)
+  -- Zach's Plugins
+  use("vim-airline/vim-airline")
+  use("vim-airline/vim-airline-themes")
+  use("tpope/vim-commentary")
+  use("ap/vim-css-color")
+  use("ryanoasis/vim-devicons")
+  use("Yggdroot/indentLine")
+  -- use("vimwiki/vimwiki")
 
+end)

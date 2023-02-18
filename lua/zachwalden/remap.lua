@@ -49,3 +49,33 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- Shortcutting split navigation
+vim.keymap.set("", "<C-h>", "<C-w>h")
+vim.keymap.set("", "<C-j>", "<C-w>j")
+vim.keymap.set("", "<C-k>", "<C-w>k")
+vim.keymap.set("", "<C-l>", "<C-w>l")
+
+-- Make adjusting split sizes more friendly
+vim.keymap.set("n","<C-Left>",":vertical resize +3<Cr>",{noremap = true, silent = true})
+vim.keymap.set("n","<C-Right>",":vertical resize -3<Cr>",{noremap = true, silent = true})
+vim.keymap.set("n","<C-Up>",":resize +3<Cr>",{noremap = true, silent = true})
+vim.keymap.set("n","<C-Down>",":resize +3<Cr>",{noremap = true, silent = true})
+
+-- Change 2 split windows from vertical to horizontal and vice versa
+vim.keymap.set("","<leader>th","<C-W>t<C-w>H",{noremap = true})
+vim.keymap.set("","<leader>tk","<C-W>t<C-w>K",{noremap = true})
+
+-- Replace all is aliased to S.
+vim.keymap.set("n","S",":%s//g<Left><Left>",{noremap = true})
+
+-- Find next interesting marker
+vim.keymap.set("n","<leader><leader>","/<++><CR>4xi",{noremap = true})
+
+-- Compile document, be it groff/LaTeX/markdown/etc. Use [[]] for strings rather than "" to avoid issues wwith escape sequences.
+vim.keymap.set("","<leader>c",[[<leader>c :w! \| !compiler "<c-r>%"<CR>]])
+
+-- Open a terminal in a split
+vim.keymap.set("","<leader>tt", [[:split \| :terminal<CR>]])
+
+--Open corresponding .pdf/.html or preview
+vim.keymap.set("","<leader>p",":!opout <c-r>%<CR><CR>")

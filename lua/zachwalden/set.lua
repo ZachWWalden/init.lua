@@ -30,3 +30,15 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.mouse = "a"
+vim.opt.bg = "light"
+vim.opt.go = "a"
+vim.opt.nohlsearch = true
+vim.opt.clipboard += "unnamedplus"
+vim.opt.noshowmode = true
+vim.opt.noruler = true
+vim.opt.laststatus = 0
+vim.opt.noshowcmd = true
+
+vim.opt.nocompatible = true
+vim.opt.encoding = "utf-8"
